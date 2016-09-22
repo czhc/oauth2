@@ -58,6 +58,10 @@ module OAuth2
       response.status
     end
 
+    def success?
+      (200..209) === status
+    end
+
     # The HTTP response body
     def body
       response.body || ''
